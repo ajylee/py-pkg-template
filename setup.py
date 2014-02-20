@@ -2,13 +2,18 @@ from distutils.core import setup
 
 MAIN_PKG = 'lala'
 
-## AJL's Boiler - Load pkg_info.json from path 'p'
-def _load_info(p):
-    import json; from os.path import isdir, dirname
-    with open((p if isdir(p) else dirname(p)) + '/pkg_info.json') as fp:
-        return json.load(fp)
 
-_info = _load_info(MAIN_PKG)
+##################
+# Read pkg_info
+##################
+
+import json
+from os.path import join
+with open(join(MAIN_PKG, 'pkg_info.json')) as fp:
+    _info = json.load(fp)
+
+
+##################
 
 setup(
         name=MAIN_PKG,
