@@ -21,6 +21,6 @@ setup(
         author='Andrew Lee',
         packages=[MAIN_PKG],
         #license='LICENSE.txt',
-        long_description=open('README.md').read(),
+        long_description=open('README.rst').read(),
         install_requires=['numpy >= 1.6.0'],
         )
